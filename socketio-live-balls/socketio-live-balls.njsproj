@@ -258,12 +258,13 @@
     <Compile Include="bower_components\semantic\tasks\rtl\watch.js" />
     <Compile Include="bower_components\semantic\tasks\version.js" />
     <Compile Include="bower_components\semantic\tasks\watch.js" />
-    <Compile Include="public\javascripts\indexController.js">
+    <Compile Include="public\javascripts\controller\indexController.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="public\javascripts\main.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\javascripts\services\indexFactory.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="src\socketApi.js" />
@@ -1013,6 +1014,8 @@
     <Folder Include="bower_components\semantic\tasks\config\project\" />
     <Folder Include="bower_components\semantic\tasks\docs\" />
     <Folder Include="bower_components\semantic\tasks\rtl\" />
+    <Folder Include="public\javascripts\controller\" />
+    <Folder Include="public\javascripts\services\" />
     <Folder Include="src\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
