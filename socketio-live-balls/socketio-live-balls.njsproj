@@ -258,6 +258,12 @@
     <Compile Include="bower_components\semantic\tasks\rtl\watch.js" />
     <Compile Include="bower_components\semantic\tasks\version.js" />
     <Compile Include="bower_components\semantic\tasks\watch.js" />
+    <Compile Include="public\javascripts\indexController.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\javascripts\main.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="bower.json" />
