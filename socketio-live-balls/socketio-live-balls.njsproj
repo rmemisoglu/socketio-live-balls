@@ -266,6 +266,7 @@
     </Compile>
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
+    <Compile Include="src\socketApi.js" />
     <Content Include="bower.json" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular-csp.css" />
@@ -1012,6 +1013,7 @@
     <Folder Include="bower_components\semantic\tasks\config\project\" />
     <Folder Include="bower_components\semantic\tasks\docs\" />
     <Folder Include="bower_components\semantic\tasks\rtl\" />
+    <Folder Include="src\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
