@@ -258,6 +258,7 @@
     <Compile Include="bower_components\semantic\tasks\rtl\watch.js" />
     <Compile Include="bower_components\semantic\tasks\version.js" />
     <Compile Include="bower_components\semantic\tasks\watch.js" />
+    <Compile Include="helpers\randomColor.js" />
     <Compile Include="public\javascripts\controller\indexController.js">
       <SubType>Code</SubType>
     </Compile>
@@ -1014,6 +1015,7 @@
     <Folder Include="bower_components\semantic\tasks\config\project\" />
     <Folder Include="bower_components\semantic\tasks\docs\" />
     <Folder Include="bower_components\semantic\tasks\rtl\" />
+    <Folder Include="helpers\" />
     <Folder Include="public\javascripts\controller\" />
     <Folder Include="public\javascripts\services\" />
     <Folder Include="src\" />

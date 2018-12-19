@@ -37,6 +37,7 @@
                     };
 
                     $scope.messages.push(messageData);
+                    $scope.players[data.id] = data;
                     $scope.$apply();
                 });
 
@@ -50,15 +51,28 @@
                     };
 
                     $scope.messages.push(messageData);
+                    delete $scope.players[data.id];
                     $scope.$apply();
+                });
+
+                socket.on('animate', data => {
+                    console.log(data);
+                    $('#' + data.socketId).animate({ 'left': data.x, 'top': data.y }, () => {
+                        animate = false;
+                    });
                 });
 
                 let animate = false;
                 $scope.onClickPlayer = ($event) => {
                     if (!animate) {
+                        let x = $event.offsetX;
+                        let y = $event.offsetY;
+
+                        socket.emit('animate', { x, y });
+
                         animate = true;
-                        $('#' + socket.id).animate({ 'left': $event.offsetX, 'top': $event.offsetY }, () => {
-                            animate = true;
+                        $('#' + socket.id).animate({ 'left': x, 'top': y }, () => {
+                            animate = false;
                         });
                     }  
                 };
