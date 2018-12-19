@@ -12,6 +12,13 @@
             return false;
     };
 
+    function scrollTop() {
+        setTimeout(() => {
+            const element = document.getElementById('chat-area');
+            element.scrollTop = element.scrollHeight;
+        });
+    };
+
     function initSocket(username) {
         const connectionOptions = {
                 reconnectionAttempts: 3,
@@ -62,6 +69,12 @@
                     });
                 });
 
+                socket.on('newMessage', message => {
+                    $scope.messages.push(message);
+                    $scope.$apply();
+                    scrollTop();
+                });
+
                 let animate = false;
                 $scope.onClickPlayer = ($event) => {
                     if (!animate) {
@@ -76,6 +89,25 @@
                         });
                     }  
                 };
+
+                $scope.newMessage = () => {
+                    let message = $scope.message;
+                    const messageData = {
+                        type: {
+                            code: 1, //server or user message
+                        },
+                        username: username,
+                        text: message
+                    };
+
+                    $scope.messages.push(messageData);
+                    $scope.message = "";
+
+                    socket.emit('newMessage', messageData);
+
+                    scrollTop();
+                };
+
             }).catch((err) => {
                 console.log(err);
             });
